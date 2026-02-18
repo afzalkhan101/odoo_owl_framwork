@@ -1,0 +1,54 @@
+<t t-name="counter_app.Counter">
+    <div class="container mt-4">
+        <div class="card shadow-sm mx-auto" style="max-width: 400px;">
+            <div class="card-header bg-light text-center">
+                <h4 class="mb-0">Counter Application</h4>
+            </div>
+
+            <div class="mb-3 row">
+
+                    <div class="col-6">
+                        <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">@Min</span>
+                        </div>
+                        <input type="number" class="form-control" t-model="state.min" id="minValue" aria-describedby="minHelp" />
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-6">
+                        <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">@Max</span>
+                        </div>
+                        <input type="number" class="form-control" t-model="state.max" id="maxValue" aria-describedby="maxHelp" />
+                        </div>
+
+                    </div>
+             </div>
+
+            <div class="card-body text-center py-5">
+                <h1 class="display-4 fw-bold mb-4">
+                    <t t-esc="state.value"/>
+                </h1>
+                
+                <div class="d-flex justify-content-center gap-2">
+                    <button t-on-click="increment" class="btn btn-primary px-4">
+                        Increase
+                    </button>
+
+                    <button t-on-click="decrement" class="btn btn-outline-primary px-4">
+                        Decrease
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-footer bg-transparent border-0 text-center pb-4">
+                <button t-on-click="reset" class="btn btn-link text-danger text-decoration-none">
+                    Reset Counter
+                </button>
+            </div>
+        </div>
+    </div>
+</t>
